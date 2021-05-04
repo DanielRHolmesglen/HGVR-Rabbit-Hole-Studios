@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SphereCollider))]
 public class PlantGrowth : MonoBehaviour
+    
 {
+   
     public List<Transform> objectsToGrow;
     public float delay;
+    public bool growing;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,10 +17,10 @@ public class PlantGrowth : MonoBehaviour
     }
     
     // Update is called once per frame
-    // void Update()
-    // {
+    void Update()
+    {
         
-    // }
+    }
 
     private IEnumerator Grow()
     {
@@ -32,3 +36,19 @@ public class PlantGrowth : MonoBehaviour
         yield return null;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
