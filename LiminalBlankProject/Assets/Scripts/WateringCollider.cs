@@ -14,7 +14,8 @@ public class WateringCollider : MonoBehaviour
             Debug.Log("grow");
             if (other.gameObject.GetComponent<VRTags>().tags[0] == "Plant")
             {
-                other.gameObject.GetComponent<PlantGrowthControllable>().growing = true;
+                other.gameObject.GetComponent<PlantGrowthControllable>().growing = true; 
+                other.gameObject.GetComponent<PlantGrowthControllable>().trig = false;
 
             }
         }
@@ -28,7 +29,8 @@ public class WateringCollider : MonoBehaviour
             Debug.Log("stop grow");
             if (other.gameObject.GetComponent<VRTags>().tags[0] == "Plant")
             {
-                other.gameObject.GetComponent<PlantGrowthControllable>().growing = false;
+                other.gameObject.GetComponent<PlantGrowthControllable>().growing = false; 
+                other.gameObject.GetComponent<PlantGrowthControllable>().trig = true;
 
             }
         }

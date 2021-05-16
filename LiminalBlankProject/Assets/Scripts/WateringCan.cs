@@ -15,24 +15,29 @@ public class WateringCan : MonoBehaviour
     public bool debug = false; //!< A boolean that controls whether or not debugs are shown in runtime.
 
     private float originalParticleSpeed; //!< The original particle speed.
-    private bool activeParticles = false; //!< A boolean that determines whether or not the particles are currently active.
+    public bool activeParticles; //!< A boolean that determines whether or not the particles are currently active.
 
     void Start()
     {
         originalParticleSpeed = waterParticles.main.startSpeedMultiplier;
+        //Debug.Log("init");
     }
 
     void Update()
     {
+       // Debug.Log("update");
         float currentAngle = Vector3.Angle(waterParticles.transform.TransformDirection(Vector3.forward), Vector3.up);
-        Debug.Log((currentAngle - pourAngle) / (180f - pourAngle) * originalParticleSpeed);
-
+        
+        
         if (currentAngle >= pourAngle)
         {
+           // Debug.Log("pour");
             if (!activeParticles)
             {
+               // Debug.Log("make water");
                 waterParticles.Play();
                 meshCollider.gameObject.SetActive(true);
+                
                 activeParticles = true;
             }
 
@@ -43,10 +48,13 @@ public class WateringCan : MonoBehaviour
         }
         else
         {
+            //Debug.Log("no pour");
             if (activeParticles)
             {
+            //Debug.Log("stop water");
                 waterParticles.Stop();
                 meshCollider.gameObject.SetActive(false);
+                
                 activeParticles = false;
             }
 
