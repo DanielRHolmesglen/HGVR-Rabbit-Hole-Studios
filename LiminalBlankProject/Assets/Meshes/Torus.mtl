@@ -1,0 +1,7 @@
+newmtl New_Material
+map_Pm tex_lambert1_Metallic.png
+bump tex_lambert1_Normal.png
+disp tex_lambert1_Height.png
+Kd 0.5754717 0.5754717 0.5754717
+d 1
+
