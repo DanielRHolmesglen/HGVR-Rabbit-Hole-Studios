@@ -17,9 +17,10 @@ public class PlantGrowthControllable : MonoBehaviour
     public bool routine;
     CapsuleCollider capsuleCollider;
 
-    private void Awake()
-    {
-        foreach (var item in leavesAndStems)
+   
+    // Start is called before the first frame update
+    void Start()
+    {foreach (var item in leavesAndStems)
         {
             item.localScale = new Vector3(.1f, .1f, .1f);
         }
@@ -28,11 +29,6 @@ public class PlantGrowthControllable : MonoBehaviour
         {
             item.localScale = new Vector3(.1f, .1f, .1f);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         capsuleCollider = GetComponent<CapsuleCollider>();
         capsuleCollider.isTrigger = true;
         
