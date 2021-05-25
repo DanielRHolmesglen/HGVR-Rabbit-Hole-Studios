@@ -14,13 +14,20 @@ public class PlantGrowthControllable : MonoBehaviour
     public bool growing;
     public bool stemsGrown;
     public bool trig = true;
+    public bool sparkling = false;
     public bool routine;
     CapsuleCollider capsuleCollider;
-
+    public ParticleSystem[] sparkles = new ParticleSystem[2];
    
     // Start is called before the first frame update
     void Start()
-    {foreach (var item in leavesAndStems)
+    {
+        foreach (var item in sparkles)
+        {
+            item.Stop();
+        }
+        
+        foreach (var item in leavesAndStems)
         {
             item.localScale = new Vector3(.1f, .1f, .1f);
         }
@@ -37,13 +44,13 @@ public class PlantGrowthControllable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (growing == true && trig == false)
         {
             if (routine == false)
             {
                 StartCoroutine(Grow());
-            }
-            
+            }           
         }
     }
 
@@ -52,6 +59,15 @@ public class PlantGrowthControllable : MonoBehaviour
         routine = true;
         if (growing == true)
         {
+            if (sparkling == false)
+            {
+                sparkling = true;
+                foreach (var item in sparkles)
+                {
+                    item.Play();
+                }
+            }
+            
             if (stemsGrown == false)
             {
                 if (leavesAndStems[0].localScale.y < 1)
@@ -82,6 +98,11 @@ public class PlantGrowthControllable : MonoBehaviour
         }
         else
         {
+            sparkling = false;
+            foreach (var item in sparkles)
+            {
+                item.Stop();
+            }
             routine = false;
             yield break;
         }
