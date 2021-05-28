@@ -6,11 +6,12 @@ using Liminal.Core.Fader;
 
 public class TeleportPoint : MonoBehaviour
 {
-    public Transform point; 
+    public Transform point;
+    public Vector3 scale;
     // Start is called before the first frame update
     void Start()
     {
-        
+        scale = gameObject.transform.localScale;
     }
 
     // Update is called once per frame
@@ -38,13 +39,15 @@ public class TeleportPoint : MonoBehaviour
         var x = FindObjectsOfType<TeleportPoint>();
         foreach (var item in x)
         {
-            item.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            item.gameObject.GetComponent<BoxCollider>().enabled = true;
+
+
+            item.gameObject.transform.localScale = scale;
+
 
         }
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        
         fader.FadeTo(Color.clear, 3);
+        gameObject.transform.localScale = Vector3.zero;
         yield return null;
 
     }

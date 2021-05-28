@@ -83,7 +83,6 @@ Transform:
   m_LocalScale: {x: 0.26420632, y: 0.26420632, z: 0.26420632}
   m_Children:
   - {fileID: 3926416122373415084}
-  - {fileID: 1634200263835127912}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92,7 +91,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2443439313182140392}
+    m_TransformParent: {fileID: 1253419853284965918}
     m_Modifications:
     - target: {fileID: 8688283418694290267, guid: ef66f03c45bb28149b1ea7b902a75bc2,
         type: 3}
@@ -122,12 +121,12 @@ PrefabInstance:
     - target: {fileID: 8688283418694290270, guid: ef66f03c45bb28149b1ea7b902a75bc2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8688283418694290270, guid: ef66f03c45bb28149b1ea7b902a75bc2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8688283418694290270, guid: ef66f03c45bb28149b1ea7b902a75bc2,
         type: 3}
@@ -137,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 8688283418694290270, guid: ef66f03c45bb28149b1ea7b902a75bc2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8688283418694290270, guid: ef66f03c45bb28149b1ea7b902a75bc2,
         type: 3}
@@ -201,12 +200,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef66f03c45bb28149b1ea7b902a75bc2, type: 3}
---- !u!4 &1634200263835127912 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8688283418694290270, guid: ef66f03c45bb28149b1ea7b902a75bc2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7944107608909978422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1634200263144990868 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8688283420152165282, guid: ef66f03c45bb28149b1ea7b902a75bc2,

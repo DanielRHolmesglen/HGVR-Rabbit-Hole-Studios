@@ -7,6 +7,7 @@ public class WateringCan : MonoBehaviour
 {
     [Header("Particle System")]
     public ParticleSystem waterParticles; //!< The water particle system.
+    public AudioSource audioSource;
     public MeshCollider meshCollider;
     [Header("Water Pour Angle")]
     [Range(0f, 180f)] public float pourAngle = 90f; //!< The minimum angle needed for water particles to start emitting.
@@ -26,7 +27,7 @@ public class WateringCan : MonoBehaviour
     void Update()
     {
        // Debug.Log("update");
-        float currentAngle = Vector3.Angle(waterParticles.transform.TransformDirection(Vector3.forward), Vector3.up);
+        float currentAngle = Vector3.Angle(gameObject.transform.TransformDirection(Vector3.forward), Vector3.up);
         
         
         if (currentAngle >= pourAngle)
@@ -36,13 +37,15 @@ public class WateringCan : MonoBehaviour
             {
                // Debug.Log("make water");
                 waterParticles.Play();
+                audioSource.Play();
                 meshCollider.gameObject.SetActive(true);
                 
                 activeParticles = true;
             }
 
-            var main = waterParticles.main;
-            main.startSpeedMultiplier = (currentAngle - pourAngle) / (180f - pourAngle) * originalParticleSpeed;
+            //disabled because the water was too slow
+            //var main = waterParticles.main;
+            //main.startSpeedMultiplier = (currentAngle - pourAngle) / (180f - pourAngle) * originalParticleSpeed;
 
             if (debug) Debug.DrawLine(waterParticles.transform.position, waterParticles.transform.TransformPoint(Vector3.forward), Color.green);
         }
@@ -53,6 +56,7 @@ public class WateringCan : MonoBehaviour
             {
             //Debug.Log("stop water");
                 waterParticles.Stop();
+                audioSource.Stop();
                 meshCollider.gameObject.SetActive(false);
                 
                 activeParticles = false;
