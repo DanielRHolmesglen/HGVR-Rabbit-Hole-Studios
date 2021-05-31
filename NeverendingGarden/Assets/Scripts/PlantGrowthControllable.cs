@@ -14,14 +14,17 @@ public class PlantGrowthControllable : MonoBehaviour
     public bool growing;
     public bool stemsGrown;
     public bool trig = true;
+    bool trig2;
     public bool sparkling = false;
     public bool routine;
+    public ExperienceProgressTracker experienceProgress;
     CapsuleCollider capsuleCollider;
     public ParticleSystem[] sparkles = new ParticleSystem[2];
    
     // Start is called before the first frame update
     void Start()
     {
+
         foreach (var item in sparkles)
         {
             item.Stop();
@@ -93,6 +96,17 @@ public class PlantGrowthControllable : MonoBehaviour
                     }
                     yield return new WaitForSeconds(delay);
                 }
+                else
+                {
+                    if (trig2 == false)
+                    {
+                        experienceProgress.totalWatered += 1;
+                        trig2 = true;
+
+                    }
+                    
+                }
+                
             }
             
         }
