@@ -19,16 +19,13 @@ public class PlantGrowthControllable : MonoBehaviour
     public bool routine;
     public ExperienceProgressTracker experienceProgress;
     CapsuleCollider capsuleCollider;
-    public ParticleSystem[] sparkles = new ParticleSystem[2];
-   
+
+    public GameObject tempErrorCube;
     // Start is called before the first frame update
     void Start()
     {
-
-        foreach (var item in sparkles)
-        {
-            item.Stop();
-        }
+        tempErrorCube.SetActive(false);
+       
         
         foreach (var item in leavesAndStems)
         {
@@ -50,8 +47,10 @@ public class PlantGrowthControllable : MonoBehaviour
         
         if (growing == true && trig == false)
         {
+            tempErrorCube.SetActive(true);
+            // Debug.LogError("how is this possible" + gameObject.name);
             if (routine == false)
-            {
+            {  tempErrorCube.SetActive(true);
                 StartCoroutine(Grow());
             }           
         }
@@ -59,17 +58,13 @@ public class PlantGrowthControllable : MonoBehaviour
 
     private IEnumerator Grow()
     {
+       
+      
+        
         routine = true;
         if (growing == true)
         {
-            if (sparkling == false)
-            {
-                sparkling = true;
-                foreach (var item in sparkles)
-                {
-                    item.Play();
-                }
-            }
+            
             
             if (stemsGrown == false)
             {
@@ -96,7 +91,7 @@ public class PlantGrowthControllable : MonoBehaviour
                     }
                     yield return new WaitForSeconds(delay);
                 }
-                else
+               /* else
                 {
                     if (trig2 == false)
                     {
@@ -105,18 +100,14 @@ public class PlantGrowthControllable : MonoBehaviour
 
                     }
                     
-                }
+                }*/
                 
             }
             
         }
         else
         {
-            sparkling = false;
-            foreach (var item in sparkles)
-            {
-                item.Stop();
-            }
+            
             routine = false;
             yield break;
         }

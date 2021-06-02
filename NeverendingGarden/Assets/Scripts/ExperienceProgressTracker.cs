@@ -13,8 +13,10 @@ public class ExperienceProgressTracker : MonoBehaviour
     bool trig3;
     public GameObject almostOverText;
     public GameObject allDoneText;
+    
     void Start()
     {
+        
         almostOverText.SetActive(false);
         allDoneText.SetActive(false);
         var x = FindObjectsOfType<PlantGrowthControllable>();
@@ -28,8 +30,8 @@ public class ExperienceProgressTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float time = Time.time;
-        Debug.Log(time);
+      float time = Time.time;
+
         if (totalWatered >= flowers.Count)
         {
             if (trig2 == false)
@@ -39,9 +41,9 @@ public class ExperienceProgressTracker : MonoBehaviour
             }
             
         }
-        if (time >= 540)
+         /* if (time >= 540)
         {
-           
+            
             if (trig == false)
             {
                 StartCoroutine(AlmostOver());
@@ -54,7 +56,7 @@ public class ExperienceProgressTracker : MonoBehaviour
                 } 
                 trig = true;
             }
-        }
+        }*/
         if (time >= 600)
         {
             if (trig3 == false)

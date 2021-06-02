@@ -1,0 +1,9 @@
+newmtl New_Material_2
+Kd 0.4078431 0.1137255 0
+d 1
+
+newmtl New_Material_5
+map_Kd dirt1.jpg
+Kd 1 1 1
+d 1
+
