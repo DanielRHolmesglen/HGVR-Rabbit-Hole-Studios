@@ -20,11 +20,11 @@ public class PlantGrowthControllable : MonoBehaviour
     public ExperienceProgressTracker experienceProgress;
     CapsuleCollider capsuleCollider;
 
-    public GameObject tempErrorCube;
+  
     // Start is called before the first frame update
     void Start()
     {
-        tempErrorCube.SetActive(false);
+
        
         
         foreach (var item in leavesAndStems)
@@ -47,10 +47,10 @@ public class PlantGrowthControllable : MonoBehaviour
         
         if (growing == true && trig == false)
         {
-            tempErrorCube.SetActive(true);
+           
             // Debug.LogError("how is this possible" + gameObject.name);
             if (routine == false)
-            {  tempErrorCube.SetActive(true);
+            {  
                 StartCoroutine(Grow());
             }           
         }

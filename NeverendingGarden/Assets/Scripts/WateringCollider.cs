@@ -8,7 +8,7 @@ public class WateringCollider : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-
+        Debug.Log(other.gameObject.name);
         if ((other.GetComponent<VRTags>() != null))
         {
             Debug.Log("grow");

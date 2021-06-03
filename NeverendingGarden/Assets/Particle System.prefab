@@ -9519,6 +9519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 0}
+  scale: {x: 0, y: 0, z: 0}
 --- !u!1 &2425308281608532860
 GameObject:
   m_ObjectHideFlags: 0
@@ -9530,8 +9531,8 @@ GameObject:
   - component: {fileID: 3391090614878774837}
   - component: {fileID: 6822752785630519305}
   - component: {fileID: 6724608593465420259}
-  - component: {fileID: 5826293380213613915}
   - component: {fileID: 6024560744073644139}
+  - component: {fileID: 7343777717340303824}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -9599,20 +9600,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5826293380213613915
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2425308281608532860}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4711208715938537054, guid: 37a238a1892746d4c9fb5376932eac10, type: 3}
 --- !u!114 &6024560744073644139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9641,3 +9628,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!136 &7343777717340303824
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2425308281608532860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 2.1
+  m_Direction: 2
+  m_Center: {x: 0.000000029237198, y: -0.0004268591, z: -0.54}

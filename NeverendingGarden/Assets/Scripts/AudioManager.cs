@@ -14,9 +14,9 @@ public class AudioManager : MonoBehaviour
 
     IEnumerator PlaySound()
     {
-        yield return new WaitForSeconds(Random.Range(5, 15));
+        yield return new WaitForSeconds(Random.Range(15, 35));
         int x = Random.Range(0, stings.Length);
-        audioSource.PlayOneShot(stings[x]);
+        audioSource.PlayOneShot(stings[x], .2f);
         StartCoroutine(PlaySound());
     }
 }

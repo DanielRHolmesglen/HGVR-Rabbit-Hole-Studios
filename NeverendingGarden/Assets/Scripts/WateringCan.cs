@@ -21,7 +21,7 @@ public class WateringCan : MonoBehaviour
     void Start()
     {
         originalParticleSpeed = waterParticles.main.startSpeedMultiplier;
-        //Debug.Log("init");
+     //   Debug.Log("init");
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class WateringCan : MonoBehaviour
         
         if (currentAngle >= pourAngle)
         {
-           // Debug.Log("pour");
+            //Debug.Log("pour");
             if (!activeParticles)
             {
                // Debug.Log("make water");
@@ -51,10 +51,10 @@ public class WateringCan : MonoBehaviour
         }
         else
         {
-            //Debug.Log("no pour");
+           // Debug.Log("no pour");
             if (activeParticles)
             {
-            //Debug.Log("stop water");
+           // Debug.Log("stop water");
                 waterParticles.Stop();
                 audioSource.Stop();
                 meshCollider.gameObject.SetActive(false);
