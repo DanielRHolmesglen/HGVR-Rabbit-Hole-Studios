@@ -13,10 +13,12 @@ public class ExperienceProgressTracker : MonoBehaviour
     bool trig3;
     public GameObject almostOverText;
     public GameObject allDoneText;
-    
+    public float time;
+    public ParticleSystem winParticles;
     void Start()
     {
-        
+        time = 0;
+        InvokeRepeating("Increment", 0, 1);
         almostOverText.SetActive(false);
         allDoneText.SetActive(false);
         var x = FindObjectsOfType<PlantGrowthControllable>();
@@ -28,10 +30,11 @@ public class ExperienceProgressTracker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-      float time = Time.time;
+    
 
+    public void Increment()
+    {
+        time += 1;
         if (totalWatered >= flowers.Count)
         {
             if (trig2 == false)
@@ -41,7 +44,7 @@ public class ExperienceProgressTracker : MonoBehaviour
             }
             
         }
-         /* if (time >= 540)
+        if (time >= 240)
         {
             
             if (trig == false)
@@ -56,8 +59,8 @@ public class ExperienceProgressTracker : MonoBehaviour
                 } 
                 trig = true;
             }
-        }*/
-        if (time >= 600)
+        }
+        if (time >= 300)
         {
             if (trig3 == false)
             {
@@ -67,15 +70,16 @@ public class ExperienceProgressTracker : MonoBehaviour
             
         }
     }
-
     IEnumerator AlmostOver()
     {
+        winParticles.Play();
         almostOverText.SetActive(true);
         yield return new WaitForSeconds(3);
         almostOverText.SetActive(false);
     }
     IEnumerator AllDone()
     {
+        winParticles.Play();
         allDoneText.SetActive(true);
         yield return new WaitForSeconds(3);
         allDoneText.SetActive(false);

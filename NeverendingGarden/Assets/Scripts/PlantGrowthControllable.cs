@@ -91,7 +91,7 @@ public class PlantGrowthControllable : MonoBehaviour
                     }
                     yield return new WaitForSeconds(delay);
                 }
-               /* else
+                else
                 {
                     if (trig2 == false)
                     {
@@ -100,7 +100,7 @@ public class PlantGrowthControllable : MonoBehaviour
 
                     }
                     
-                }*/
+                }
                 
             }
             
