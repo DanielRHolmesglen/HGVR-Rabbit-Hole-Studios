@@ -1,16 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(VRTags))]
 public class PlantGrowthControllable : MonoBehaviour 
 {
-
-    public List<Transform> leavesAndStems; 
-    public List<Transform> flowers;
-
     public Animator animatorController;
     public float delay;
     public float growthAmount;
@@ -26,9 +21,10 @@ public class PlantGrowthControllable : MonoBehaviour
   
     // Start is called before the first frame update
     void Start()
-
-    {   animatorController.speed = 0;
-        animatorController.playbackTime = 0;
+    {
+        
+        animatorController.speed = 0;
+       
 
 
        

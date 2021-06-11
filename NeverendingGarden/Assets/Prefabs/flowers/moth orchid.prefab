@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 1653060820723476871}
   - component: {fileID: 1653060820723476600}
   - component: {fileID: 3715021768309327715}
+  - component: {fileID: 233151305793018517}
   m_Layer: 0
   m_Name: moth orchid
   m_TagString: Untagged
@@ -640,18 +641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d28518f8f3c2a4a9d8f2f3a1e26a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leavesAndStems:
-  - {fileID: 6019745624504599190}
-  - {fileID: 4432103517680848186}
-  flowers:
-  - {fileID: 4534604667176915338}
-  - {fileID: 1017281987312441995}
-  - {fileID: 8579399151945198449}
-  - {fileID: 1397718487814402598}
-  - {fileID: 8174733481036982921}
-  - {fileID: 1278929574245418575}
-  - {fileID: 3616399069326505401}
-  - {fileID: 143037484135730770}
+  topObject: {fileID: 7336705846553473157}
+  animatorController: {fileID: 233151305793018517}
   delay: 0.01
   growthAmount: 0.005
   growing: 0
@@ -660,9 +651,6 @@ MonoBehaviour:
   sparkling: 0
   routine: 0
   experienceProgress: {fileID: 0}
-  sparkles:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1653060820723476600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +679,25 @@ CapsuleCollider:
   m_Height: 1.8406519
   m_Direction: 1
   m_Center: {x: 0.29, y: 0.26472336, z: 0.0071755014}
+--- !u!95 &233151305793018517
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7336705846553473157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f0a5eb488b29d94cbf15845322411d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7993815022891246041
 GameObject:
   m_ObjectHideFlags: 0

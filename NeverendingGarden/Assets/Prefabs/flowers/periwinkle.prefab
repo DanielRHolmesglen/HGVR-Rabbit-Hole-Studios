@@ -482,6 +482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5299945036534016424}
+  - component: {fileID: 45366843654129852}
   m_Layer: 0
   m_Name: periwinkle
   m_TagString: Untagged
@@ -504,6 +505,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -5.431, y: -30.196001, z: -0.36100003}
+--- !u!95 &45366843654129852
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6601185044845609793}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c37ae01f2f79f864da75bd7c7f1cb2f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7366517380636276050
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,20 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d28518f8f3c2a4a9d8f2f3a1e26a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leavesAndStems:
-  - {fileID: 4244785334568126615}
-  - {fileID: 4677435829714929197}
-  - {fileID: 5599790596115996190}
-  - {fileID: 7150970747208225954}
-  - {fileID: 3011611530479223758}
-  - {fileID: 150970209128123038}
-  - {fileID: 2862204779794961913}
-  - {fileID: 3007895677099731325}
-  flowers:
-  - {fileID: 2148523592520696852}
-  - {fileID: 271321161805583435}
-  - {fileID: 7799807741463277801}
-  - {fileID: 5372451482417887635}
+  animatorController: {fileID: 45366843654129852}
   delay: 0.01
   growthAmount: 0.005
   growing: 0
@@ -740,7 +747,6 @@ MonoBehaviour:
   sparkling: 0
   routine: 0
   experienceProgress: {fileID: 0}
-  tempErrorCube: {fileID: 0}
 --- !u!114 &2975531947754589405
 MonoBehaviour:
   m_ObjectHideFlags: 0
