@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(15, 35));
         int x = Random.Range(0, stings.Length);
-        audioSource.PlayOneShot(stings[x], .2f);
+        audioSource.PlayOneShot(stings[x], .1f);
         StartCoroutine(PlaySound());
     }
 }

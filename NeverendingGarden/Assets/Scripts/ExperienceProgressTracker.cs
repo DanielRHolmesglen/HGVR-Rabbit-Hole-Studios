@@ -49,14 +49,9 @@ public class ExperienceProgressTracker : MonoBehaviour
             
             if (trig == false)
             {
-                StartCoroutine(AlmostOver());
+                StartCoroutine(AlmostOver()); 
+                StartCoroutine(GrowIn());
 
-                foreach (var item in flowers)
-                {
-                    item.growing = true; 
-                    item.trig = false;
-
-                } 
                 trig = true;
             }
         }
@@ -69,6 +64,17 @@ public class ExperienceProgressTracker : MonoBehaviour
             }
             
         }
+    }
+
+    IEnumerator GrowIn()
+    {
+        foreach (var item in flowers)
+        {
+            item.growing = true; 
+            item.trig = false;
+            yield return new WaitForEndOfFrame();
+        } 
+                
     }
     IEnumerator AlmostOver()
     {
