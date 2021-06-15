@@ -71,7 +71,7 @@ public class ExperienceProgressTracker : MonoBehaviour
         foreach (var item in flowers)
         {
             item.growing = true; 
-            item.trig = false;
+           
             yield return new WaitForEndOfFrame();
         } 
                 

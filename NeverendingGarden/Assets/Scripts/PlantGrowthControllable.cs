@@ -11,12 +11,10 @@ public class PlantGrowthControllable : MonoBehaviour
     public float growthAmount;
     public bool growing;
     public bool stemsGrown;
-    public bool trig = true;
-    public bool trig2; 
-    public bool trig3;
+  
+
+    
     bool done;
-    public bool sparkling = false;
-    public bool routine;
     public ExperienceProgressTracker experienceProgress;
     CapsuleCollider capsuleCollider;
 
@@ -38,22 +36,21 @@ public class PlantGrowthControllable : MonoBehaviour
         {
             StopAllCoroutines();
         }
-        if (growing == true && trig == false)
-        {                       
-            if (routine == false && done == false)
-            {  
+        
+        if (done == false)
+        { 
+            if (growing == true)
+            {                       
+            
+             
                 StartCoroutine(Grow());
-            }           
+                     
+            }  
         }
-    }
 
-    void NewUpdate()
-    {
-        
     }
-        
-
-    private IEnumerator Grow()
+    
+    public IEnumerator Grow()
     {
         Debug.Log("running coroutine");
         if (animatorController.playbackTime >= 10)
@@ -63,25 +60,27 @@ public class PlantGrowthControllable : MonoBehaviour
             yield break;
         }          
 
-        routine = true;
+        
+
         if (growing == true)
-        {
-            if (trig3 == false)
-            {
+        {   
+            
+            
                 animatorController.speed = 1;
-                trig3 = true;
-            }
+               
+            
             
            
            
         }
-        else
+        else if (growing == false)
         {
-            trig3 = false;
+            Debug.Log("no grow");
+           
             animatorController.speed = 0;
-            routine = false;
+          
             yield break;
-        }
+        }  
         yield return null;
       
     }  
